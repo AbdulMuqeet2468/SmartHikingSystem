@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 0,
+      "left": 0
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led",
+      "top": -60,
+      "left": 250,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "buzz",
+      "top": 60,
+      "left": 250
+    },
+    {
+      "type": "wokwi-ssd1306",
+      "id": "oled",
+      "top": 0,
+      "left": 380
+    }
+  ],
+  "connections": [
+    [ "esp:5", "led:A", "green", [ "h0" ] ],
+    [ "led:C", "esp:GND.2", "black", [ "v0" ] ],
+
+    [ "esp:4", "buzz:1", "green", [ "h0" ] ],
+    [ "buzz:2", "esp:GND.2", "black", [ "v0" ] ],
+
+    [ "esp:21", "oled:SDA", "green", [ "h0" ] ],
+    [ "esp:22", "oled:SCL", "green", [ "h0" ] ],
+    [ "esp:3V3", "oled:VCC", "red", [ "v0" ] ],
+    [ "esp:GND.2", "oled:GND", "black", [ "v0" ] ]
+  ]
+}
